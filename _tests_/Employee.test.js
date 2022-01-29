@@ -1,6 +1,6 @@
 const { expect } = require('@jest/globals');
 const { test } = require('picomatch');
-const Employee = require('./lib/Employee');
+const Employee = require('../lib/Employee');
 
 // Create Employee Object
 test('create employee object', () => {
