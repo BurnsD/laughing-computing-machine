@@ -223,7 +223,7 @@ const employeeArray = [];
     ]).then(answers => {
         console.log(answers);
         const manager = new Manager(
-            answers.engineerName,
+            answers.managerName,
             answers.id, 
             answers.email, 
             answers.officeNumber)
