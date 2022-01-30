@@ -97,22 +97,7 @@ module.exports = employees => {
     <div class="main-contianer">
         <div class="row">
             <div class="content-area">
-        
-                <div class="">
-                    <div class="">
-                        <div class="">
-                            <h3 class=""></h3>
-                            <h4 class="">Intern</h4><i class=""></i>
-                        </div>
-                        <div class="card-body">
-                            <p class="id">ID: </p>
-                            <p class="email">Email:<a href="mailto:"></a></p>
-                            <p class="school">School: </p>
-                        </div>
-                    </div>
-                </div>
-
-
+            ${generatePage(employees)}
             </div> 
         </div>
     </div>
