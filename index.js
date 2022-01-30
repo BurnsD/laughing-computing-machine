@@ -78,7 +78,7 @@ const decideRole = () => {
             if (action === 'Engineer'){
                 
                 console.log("Enter Engineer's Information")
-                // Questions for Intern Input
+                // Questions for Engineer Input
                 inquirer.prompt ([
                     {
                         type: 'input',
@@ -127,5 +127,57 @@ const decideRole = () => {
                     },
                 ])
             }
-        }) 
+        }).then(({ action }) => {
+            if (action === 'Manager') {
+                console.log("Enter Manager's Information")
+                // Questions for Manager Input
+                inquirer.prompt ([
+                    {
+                        type: 'input',
+                        name: 'managerName',
+                        message: 'Managers Name',
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                            } else {
+                                return 'Please enter a name!';
+                            }
+                        }
+                    }, {
+                        type: 'input',
+                        name: 'id',
+                        message: 'ID Number',
+                        validate: idInput => {
+                            if (idInput) {
+                                return true;
+                            } else {
+                                return 'Please enter ID!';
+                            }
+                        }
+                    }, {
+                        type: 'input',
+                        name: 'email',
+                        message: 'Email Address',
+                        validate: emailInput => {
+                            if (emailInput) {
+                                return true;
+                            } else {
+                                return 'Please enter e-mail!';
+                            }
+                        }
+                    }, {
+                        type: 'input',
+                        name: 'officeNumber',
+                        message: 'Enter Office Number.',
+                        validate: numberInput => {
+                            if (numberInput) {
+                                return true;
+                            } else {
+                                return 'Please enter an Office Number!';
+                            }
+                        }
+                    },
+                ])
+            }
+        })
 }
