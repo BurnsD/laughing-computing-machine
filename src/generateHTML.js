@@ -61,8 +61,16 @@ const generatePage = function (employees) {
         .map(intern => genereateIntern(intern))
         .join(' ')
     )
-
-
+    newPage.push(
+        employees.filter(employee => employee.getRole() === 'Engineer')
+        .map(engineer => genereateEngineer(engineer))
+        .join(' ')
+    )
+    newPage.push(
+        employees.filter(employee => employee.getRole() === 'Manager')
+        .map(manager => genereateIntern(manager))
+        .join(' ')
+    )
     // Return
-
+    return newPage.join('')
 }
