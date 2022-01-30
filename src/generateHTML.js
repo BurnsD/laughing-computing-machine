@@ -4,12 +4,12 @@ const generatePage = function (employees) {
     const generateIntern = function (intern) {
         return `
         <div>
-        <div>
-            <div class="header">
+        <div class="em-card">
+            <div class="header-em">
                 <h3 class="name">${intern.name}</h3>
                 <h4 class="role">Intern</h4>
             </div>
-            <div class="body">
+            <div class="body-em">
                 <p class="id">ID: ${intern.id}</p>
                 <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
                 <p class="school"> School: ${intern.school}</p>
@@ -22,12 +22,12 @@ const generatePage = function (employees) {
     const generateEngineer = function (engineer) {
         return `
         <div>
-        <div>
-            <div class="header">
+        <div class="em-card">
+            <div class="header-em">
                 <h3 class="name">${engineer.name}</h3>
                 <h4 class="role">Engineer</h4>
             </div>
-            <div class="body">
+            <div class="body-em">
                 <p class="id">ID: ${engineer.id}</p>
                 <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
                 <p class="github"> GitHub: <a href="https://github.com/${engineer.github}"></a> ${engineer.github}</p>
@@ -40,12 +40,12 @@ const generatePage = function (employees) {
     const generateManager = function (manager) {
         return `
         <div>
-        <div>
-            <div class="header">
+        <div class="em-card">
+            <div class="header-em">
                 <h3 class="name">${manager.name}</h3>
                 <h4 class="role">Manager</h4>
             </div>
-            <div class="body">
+            <div class="body-em">
                 <p class="id">ID: ${manager.id}</p>
                 <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
                 <p class="officeNum"> Office Number: ${manager.officeNumber}</p>

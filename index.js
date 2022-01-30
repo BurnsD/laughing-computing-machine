@@ -148,8 +148,8 @@ const employeeArray = [];
             type: 'input',
             name: 'github',
             message: 'Enter GitHub Username.',
-            validate: githubInput => {
-                if (githubInput) {
+            validate: github => {
+                if (github) {
                     return true;
                 } else {
                     return 'Please enter GitHub Username!';
@@ -223,7 +223,7 @@ const employeeArray = [];
     ]).then(answers => {
         console.log(answers);
         const manager = new Manager(
-            answers.engineerName,
+            answers.managerName,
             answers.id, 
             answers.email, 
             answers.officeNumber)
