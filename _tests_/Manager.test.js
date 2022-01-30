@@ -1,4 +1,4 @@
-const { test, expect } = require('@jest/globals');
+
 const { number } = require('yargs');
 const Manager = require('../lib/Manager');
 
@@ -6,7 +6,7 @@ const Manager = require('../lib/Manager');
 test('creates Manager', () => {
     const manager = new Manager('Name here', "001", 'Test@notreal.com', 1)
 
-    expect(manager.officeNumber).toEqual(expect.any(number))
+    expect(manager.officeNumber).toEqual(expect.any(Number));
 });
 
 // Make function that returns role as Manager
