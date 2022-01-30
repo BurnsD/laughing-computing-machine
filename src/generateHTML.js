@@ -1,7 +1,7 @@
 // Function for Generating HTML
 const generatePage = function (employees) {
     // Intern 
-    const genereateIntern = function (intern) {
+    const generateIntern = function (intern) {
         return `
         <div>
         <div>
@@ -19,7 +19,7 @@ const generatePage = function (employees) {
         `
     }
     // Engineer
-    const genereateEngineer = function (engineer) {
+    const generateEngineer = function (engineer) {
         return `
         <div>
         <div>
@@ -37,7 +37,7 @@ const generatePage = function (employees) {
         `
     }
     // Manager
-    const genereateManager = function (manager) {
+    const generateManager = function (manager) {
         return `
         <div>
         <div>
@@ -58,17 +58,17 @@ const generatePage = function (employees) {
     const newPage = [];
     newPage.push(
         employees.filter(employee => employee.getRole() === 'Intern')
-        .map(intern => genereateIntern(intern))
+        .map(intern => generateIntern(intern))
         .join(' ')
     )
     newPage.push(
         employees.filter(employee => employee.getRole() === 'Engineer')
-        .map(engineer => genereateEngineer(engineer))
+        .map(engineer => generateEngineer(engineer))
         .join(' ')
     )
     newPage.push(
         employees.filter(employee => employee.getRole() === 'Manager')
-        .map(manager => genereateManager(manager))
+        .map(manager => generateManager(manager))
         .join(' ')
     )
     // Return
