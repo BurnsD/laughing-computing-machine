@@ -1,6 +1,3 @@
-
-const { expect } = require('@jest/globals');
-const { test } = require('picomatch');
 const Employee = require('../lib/Employee');
 
 // Create Employee Object
@@ -21,13 +18,13 @@ test('add name to employee object.', () => {
 test('add id to employee object.', () => {
     const newID = "001";
     const employeeObject = new Employee("Name here", newID);
-    expect(employeeObject.getID()).toBe(newID)
+    expect(employeeObject.getId()).toBe(newID)
 });
 
 // Make function to retrieve E-mail
 test('add email to employee object.', () => {
     const newEmail = "Test@notreal.com"
-    const employeeObject = new Employee("Name here", newEmail);
+    const employeeObject = new Employee("Name here", "001", newEmail);
     expect(employeeObject.getEmail()).toBe(newEmail)
 });
 
