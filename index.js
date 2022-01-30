@@ -64,15 +64,68 @@ const decideRole = () => {
                         type: 'input',
                         name: 'school',
                         message: 'Which school does this intern attend?',
-                        validate: numberInput => {
-                            if (numberInput) {
+                        validate: schoolInput => {
+                            if (schoolInput) {
                                 return true;
                             } else {
                                 return 'Please enter school name!';
                             }
                         }
                     },
+                ]);
+            }
+        }).then(({ action }) => {
+            if (action === 'Engineer'){
+                
+                console.log("Enter Engineer's Information")
+                // Questions for Intern Input
+                inquirer.prompt ([
+                    {
+                        type: 'input',
+                        name: 'engineerName',
+                        message: 'Engineers Name',
+                        validate: nameInput => {
+                            if (nameInput) {
+                                return true;
+                            } else {
+                                return 'Please enter a name!';
+                            }
+                        }
+                    }, {
+                        type: 'input',
+                        name: 'id',
+                        message: 'ID Number',
+                        validate: idInput => {
+                            if (idInput) {
+                                return true;
+                            } else {
+                                return 'Please enter ID!';
+                            }
+                        }
+                    }, {
+                        type: 'input',
+                        name: 'email',
+                        message: 'Email Address',
+                        validate: emailInput => {
+                            if (emailInput) {
+                                return true;
+                            } else {
+                                return 'Please enter e-mail!';
+                            }
+                        }
+                    }, {
+                        type: 'input',
+                        name: 'github',
+                        message: 'Enter GitHub Username.',
+                        validate: githubInput => {
+                            if (githubInput) {
+                                return true;
+                            } else {
+                                return 'Please enter GitHub Username!';
+                            }
+                        }
+                    },
                 ])
             }
-        })
+        }) 
 }
