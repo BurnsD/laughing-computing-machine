@@ -1,18 +1,18 @@
 // Function for Generating HTML
 const generatePage = function (employees) {
-    // Intern 
-    const generateIntern = function (intern) {
+    // Manager
+    const generateManager = function (manager) {
         return `
         <div>
         <div class="em-card">
             <div class="header-em">
-                <h3 class="name">${intern.name}</h3>
-                <h4 class="role">Intern</h4>
+                <h3 class="em-name">${manager.name}</h3>
+                <h4 class="role">Manager</h4>
             </div>
             <div class="body-em">
-                <p class="id">ID: ${intern.id}</p>
-                <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-                <p class="school"> School: ${intern.school}</p>
+                <p class="id card-info">ID: ${manager.id}</p>
+                <p class="email card-info">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class="officeNum card-info"> Office Number: ${manager.officeNumber}</p>
             </div>
         </div>
         </div>
@@ -24,31 +24,31 @@ const generatePage = function (employees) {
         <div>
         <div class="em-card">
             <div class="header-em">
-                <h3 class="name">${engineer.name}</h3>
+                <h3 class="em-name">${engineer.name}</h3>
                 <h4 class="role">Engineer</h4>
             </div>
             <div class="body-em">
-                <p class="id">ID: ${engineer.id}</p>
-                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github"> GitHub: <a href="https://github.com/${engineer.github}"></a> ${engineer.github}</p>
+                <p class="id card-info">ID: ${engineer.id}</p>
+                <p class="email card-info">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p class="github card-info"> GitHub: <a href="https://github.com/${engineer.github}"></a> ${engineer.github}</p>
             </div>
         </div>
         </div>
         `
     }
-    // Manager
-    const generateManager = function (manager) {
+    // Intern 
+    const generateIntern = function (intern) {
         return `
         <div>
         <div class="em-card">
             <div class="header-em">
-                <h3 class="name">${manager.name}</h3>
-                <h4 class="role">Manager</h4>
+                <h3 class="em-name">${intern.name}</h3>
+                <h4 class="role">Intern</h4>
             </div>
             <div class="body-em">
-                <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="officeNum"> Office Number: ${manager.officeNumber}</p>
+                <p class="id card-info">ID: ${intern.id}</p>
+                <p class="email card-info">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                <p class="school card-info"> School: ${intern.school}</p>
             </div>
         </div>
         </div>
@@ -57,8 +57,8 @@ const generatePage = function (employees) {
     // Push to Roles to Page
     const newPage = [];
     newPage.push(
-        employees.filter(employee => employee.getRole() === 'Intern')
-        .map(intern => generateIntern(intern))
+        employees.filter(employee => employee.getRole() === 'Manager')
+        .map(manager => generateManager(manager))
         .join(' ')
     )
     newPage.push(
@@ -67,8 +67,8 @@ const generatePage = function (employees) {
         .join(' ')
     )
     newPage.push(
-        employees.filter(employee => employee.getRole() === 'Manager')
-        .map(manager => generateManager(manager))
+        employees.filter(employee => employee.getRole() === 'Intern')
+        .map(intern => generateIntern(intern))
         .join(' ')
     )
     // Return

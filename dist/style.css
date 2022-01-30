@@ -1,16 +1,16 @@
 .header-contianer {
-    text-align: center;
     text-shadow: 1px;
     color: whitesmoke;
-    background-color: green;
+    background-color: red;
     border-radius: 3em;
 }
 .my-team {
-    margin-bottom: 3em;
+    text-align: center;
+    font-size: 75px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .header-em{
-   background-color: lightgreen;
+   background-color: blue;
    text-align: left;
    padding-left: 1rem;
    font-size: large;
@@ -18,20 +18,31 @@
 .content-area {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 2em;
     grid-column-gap: 3em;
 }
 .body-em{
-    max-width: 800px;
-    max-height: 800px;
-    padding: 1em;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.em-name{
+    font: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    font-size: xx-large;
+}
+.role{
+    font-size: larger;
+    font-weight: 200;
+    padding-bottom: 1rem;
+    text-align: center;
+}
 .em-card{
+    justify-content: center;
+    padding-left: 6rem;
     margin: 2rem;
-    box-shadow: yellow;
     text-align: center;
     max-width: 325px;
 }
