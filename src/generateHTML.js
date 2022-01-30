@@ -77,7 +77,46 @@ const generatePage = function (employees) {
 // Export Employee information to Index
 module.exports = employees => {
     return `
-    
-    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="header-contianer">
+        <div class="row">
+            <div class="header">
+                <h1 class="my-team">My Team</h1>
+            </div>
+        </div>
+    </div>
+    <div class="main-contianer">
+        <div class="row">
+            <div class="content-area">
+        
+                <div class="">
+                    <div class="">
+                        <div class="">
+                            <h3 class=""></h3>
+                            <h4 class="">Intern</h4><i class=""></i>
+                        </div>
+                        <div class="card-body">
+                            <p class="id">ID: </p>
+                            <p class="email">Email:<a href="mailto:"></a></p>
+                            <p class="school">School: </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div> 
+        </div>
+    </div>
+</body>
+</html>  
     `
 }
