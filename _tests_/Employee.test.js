@@ -18,7 +18,7 @@ test('add name to employee object.', () => {
 
 // Make function to retrieve employee ID
 test('add id to employee object.', () => {
-    const newID = 001;
+    const newID = "001";
     const employeeObject = new Employee("Name here", newID);
     expect(employeeObject.getID()).toBe(newID)
 });
