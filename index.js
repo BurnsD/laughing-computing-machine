@@ -17,14 +17,15 @@ const OUTPUTpath = path.join(OUTPUT_DIR, 'list.html');
 
 // Employee Array
 const employeeArray = [];
-/*
-const addTeamMember = () => {
-    inquirer
-        .prompt([{
-          type: 'list',
-          message: 'What role does this person take?',
-          name: 'action',
-          choices: ['Intern', 'Engineer', 'Manager',]
+
+// Prompt to decide which role employee plays
+    const addTeamMember = () => {
+        inquirer.prompt([
+        {
+            type: 'list',
+            message: 'What role does this person take?',
+            name: 'employeeType',
+            choices: ['Intern', 'Engineer', 'Manager', 'Done']
         }
     ]).then(choice => {
         switch (choice.employeeType) {
@@ -41,7 +42,7 @@ const addTeamMember = () => {
         }
     })
 }
-*/
+
     // Intern
     const addIntern = () => {
     console.log("Enter Intern's Information")
@@ -231,30 +232,7 @@ const addTeamMember = () => {
     })
 }
     // End of Manager
-    const addTeamMember = () => {
-        inquirer.prompt([
-        {
-            type: 'list',
-            message: 'What role does this person take?',
-            name: 'employeeType',
-            choices: ['Intern', 'Engineer', 'Manager', 'Done']
-        }
-    ]).then(choice => {
-        switch (choice.employeeType) {
-            case 'Intern':
-                addIntern();
-                break;
-            case 'Engineer':
-                addEngineer();
-                break;
-            case 'Manager':
-                addManager();
-            default:
-                writeFile()
-        }
-    })
-}
-    
+
     // Generates HTML using fs
 const writeFile = () => {
     if (!fs.existsSync(OUTPUT_DIR)) {
@@ -264,5 +242,5 @@ const writeFile = () => {
     }
 }; 
     
-
+// Function to start application
 addTeamMember();
