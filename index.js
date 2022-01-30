@@ -11,6 +11,10 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const path = require('path');
 
+// Path
+const OUTPUT_DIR = path.resolve(__dirname, 'dist');
+const OUTPUTpath = path.join(OUTPUT_DIR, 'list.html');
+
 // Employee Array
 const employeeArray = [];
 
@@ -33,7 +37,7 @@ const addTeamMember = () => {
             case 'Manager':
                 addManager();
             default:
-                fs.writeFile()
+                writeFile()
         }
     })
 }
@@ -228,4 +232,15 @@ const addTeamMember = () => {
 }
     // End of Manager
 
+    // Generates HTML using fs
+const writeFile = () => {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR);
+    } else {
+        fs.writeFileSync(OUTPUTpath, generateHTML(teamArray), 'utf-8');
+    }
+}; 
+    
+
+addTeamMember();
 
