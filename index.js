@@ -40,8 +40,8 @@ const addTeamMember = () => {
 
     // Intern
     const addIntern = () => {
-        console.log("Enter Intern's Information")
-        // Questions for Intern Input
+    console.log("Enter Intern's Information")
+            // Questions for Intern Input
         inquirer.prompt ([
         {
             type: 'input',
@@ -166,59 +166,66 @@ const addTeamMember = () => {
 
         
         // Manager
-        .then(({ action }) => {
-            if (action === 'Manager') {
-                console.log("Enter Manager's Information")
-                // Questions for Manager Input
-                inquirer.prompt ([
-                    {
-                        type: 'input',
-                        name: 'managerName',
-                        message: 'Managers Name',
-                        validate: nameInput => {
-                            if (nameInput) {
-                                return true;
-                            } else {
-                                return 'Please enter a name!';
-                            }
-                        }
-                    }, {
-                        type: 'input',
-                        name: 'id',
-                        message: 'ID Number',
-                        validate: idInput => {
-                            if (idInput) {
-                                return true;
-                            } else {
-                                return 'Please enter ID!';
-                            }
-                        }
-                    }, {
-                        type: 'input',
-                        name: 'email',
-                        message: 'Email Address',
-                        validate: emailInput => {
-                            if (emailInput) {
-                                return true;
-                            } else {
-                                return 'Please enter e-mail!';
-                            }
-                        }
-                    }, {
-                        type: 'input',
-                        name: 'officeNumber',
-                        message: 'Enter Office Number.',
-                        validate: numberInput => {
-                            if (numberInput) {
-                                return true;
-                            } else {
-                                return 'Please enter an Office Number!';
-                            }
-                        }
-                    },
-                ])
+    const addManager = () => {
+    console.log("Enter Manager's Information")
+            // Questions for Manager Input
+        inquirer.prompt ([
+        {
+            type: 'input',
+            name: 'managerName',
+            message: 'Managers Name',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+            } else {
+                return 'Please enter a name!';
             }
-        })
-        // End of Manager
+        }
+    }, {
+            type: 'input',
+            name: 'id',
+            message: 'ID Number',
+            validate: idInput => {
+            if (idInput) {
+                return true;
+            } else {
+                return 'Please enter ID!';
+            }
+        }
+    }, {
+            type: 'input',
+            name: 'email',
+            message: 'Email Address',
+            validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                return 'Please enter e-mail!';
+            }
+        }
+    }, {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'Enter Office Number.',
+            validate: numberInput => {
+                if (numberInput) {
+                    return true;
+                } else {
+                    return 'Please enter an Office Number!';
+                }
+            }
+        },
+    ]).then(answers => {
+        console.log(answers);
+        const manager = new Manager(
+            answers.engineerName,
+            answers.id, 
+            answers.email, 
+            answers.officeNumber)
+        employeeArray.push(manager);
+        addTeamMember();
+    })
+}
+    // End of Manager
 
 
