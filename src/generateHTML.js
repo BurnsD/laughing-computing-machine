@@ -74,3 +74,10 @@ const generatePage = function (employees) {
     // Return
     return newPage.join('')
 }
+// Export Employee information to Index
+module.exports = employees => {
+    return `
+    
+    
+    `
+}
