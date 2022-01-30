@@ -30,7 +30,7 @@ const generatePage = function (employees) {
             <div class="body-em">
                 <p class="id card-info">ID: ${engineer.id}</p>
                 <p class="email card-info">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github card-info"> GitHub: <a href="https://github.com/${engineer.github}"></a> ${engineer.github}</p>
+                <p class="gitH card-info"> GitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             </div>
         </div>
         </div>

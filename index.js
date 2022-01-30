@@ -148,8 +148,8 @@ const employeeArray = [];
             type: 'input',
             name: 'github',
             message: 'Enter GitHub Username.',
-            validate: github => {
-                if (github) {
+            validate: githubInput => {
+                if (githubInput) {
                     return true;
                 } else {
                     return 'Please enter GitHub Username!';
