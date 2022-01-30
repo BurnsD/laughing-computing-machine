@@ -1,5 +1,3 @@
-// Test has passed!
-
 const { expect } = require('@jest/globals');
 const { test } = require('picomatch');
 const Employee = require('../lib/Employee');
