@@ -237,7 +237,7 @@ const writeFile = () => {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR);
     } else {
-        fs.writeFileSync(OUTPUTpath, generateHTML(teamArray), 'utf-8');
+        fs.writeFileSync(OUTPUTpath, generateHTML(employeeArray), 'utf-8');
     }
 }; 
     
